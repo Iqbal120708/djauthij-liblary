@@ -17,7 +17,7 @@ Reusable Django authentication app with OTP verification and optional background
 ## Installation
 
 ```
-pip install djauthij
+pip install git+https://github.com/Iqbal120708/djauthij-liblary.git
 pip install redis
 ```
 
