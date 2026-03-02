@@ -1,5 +1,5 @@
 from django.test import TestCase
-from custom_auth.models import OTPVerifications
+from djauthij.models import OTPVerifications
 from django.contrib.auth import get_user_model
 from django.utils.timezone import now
 from datetime import timedelta
@@ -48,7 +48,7 @@ class TestVerifyOTP(TestCase):
         
         self.assertContains(res, "Kode OTP tidak valid atau sudah kadaluwarsa.")
         
-    @patch("custom_auth.views.UserModel.save")
+    @patch("djauthij.views.UserModel.save")
     def test_error_transaction_db(self, mock_save):
         mock_save.side_effect = Exception("DB error")
         

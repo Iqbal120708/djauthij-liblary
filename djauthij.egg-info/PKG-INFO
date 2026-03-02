@@ -1,3 +1,14 @@
+Metadata-Version: 2.4
+Name: djauthij
+Version: 0.1.0
+Summary: Reusable Django authentication app
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: Django>=4.2
+Requires-Dist: django-huey>=1.3.1
+Dynamic: license-file
+
 # djauthij
 
 Reusable Django authentication app with OTP verification and optional background task support using Huey.
@@ -28,20 +39,6 @@ INSTALLED_APPS = [
     "huey.contrib.djhuey",
     "djauthij",
 ]
-```
-
-```python
-python manage.py makemigrations
-python manage.py migrate
-```
-
-```bash
-redis-server
-```
-
-```python
-python manage.py runserver
-python manage.py run_huey
 ```
 
 ## Email Settings

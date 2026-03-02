@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.contrib.messages import get_messages
 from django.urls import reverse
-from custom_auth.models import OTPVerifications
+from djauthij.models import OTPVerifications
 from unittest.mock import patch
 from django.contrib.auth import get_user_model
 
@@ -33,7 +33,7 @@ class TestRegister(TestCase):
     
         self.assertEqual(str(messages[0]), "Email ini sudah terdaftar, Silakan login")
     
-    @patch("custom_auth.views.send_otp_email")
+    @patch("djauthij.views.send_otp_email")
     def test_user_exists_and_not_active(self, mock_send_email):
         self.user.is_active = False
         self.user.save()
@@ -54,7 +54,7 @@ class TestRegister(TestCase):
             instance_otp.otp
         )
     
-    @patch("custom_auth.views.send_otp_email")
+    @patch("djauthij.views.send_otp_email")
     def test_success(self, mock_send_email):
         self.form_data["username"] = "test2"
         self.form_data["email"] = "test2@gmail.com"

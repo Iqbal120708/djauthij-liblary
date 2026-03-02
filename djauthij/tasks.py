@@ -2,12 +2,12 @@ from huey.contrib.djhuey import task
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
-from django.conf import settings
+from .conf import APP_NAME, EMAIL_HOST_USER
 
 @task(retries=3, retry_delay=60)
 def send_otp_email(user_email, otp_code):
     subject = 'Kode Verifikasi Akun'
-    from_email = f"{settings.NAME_APP} <{settings.EMAIL_HOST_USER}>"
+    from_email = f"{APP_NAME} <{EMAIL_HOST_USER}>"
     to = [user_email]
 
     html_content = render_to_string('registration/otp_email.html', {'otp': otp_code})

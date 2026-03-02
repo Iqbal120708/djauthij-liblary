@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('custom_auth', '0002_otpverifications'),
+        ('djauthij', '0002_otpverifications'),
     ]
 
     operations = [

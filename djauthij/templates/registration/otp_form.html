@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<body>
+    <h2>OTP</h2>
+    <p>
+        Masukkan kode OTP yang dikirim melalui email.
+    </p>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li class="{{ message.tags }}">
+            {{ message }}
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="otp_code" />
+    {% if error_otp %}
+    <p>
+        {{error_otp}}
+    </p>
+    {% endif %}
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>

@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.contrib.auth import get_user_model
-from custom_auth.forms import CreateUserForm
+from djauthij.forms import CreateUserForm
 
 class TestForm(TestCase):
     @classmethod

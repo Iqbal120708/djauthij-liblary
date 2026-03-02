@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.contrib.auth import get_user_model
-from custom_auth.models import OTPVerifications
+from djauthij.models import OTPVerifications
 from django.utils.timezone import now
 from datetime import timedelta
 from django.core.exceptions import ValidationError
